@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 220 33% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 33% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 33% 15%;
+    --primary: 209 63% 49%; /* #2E7FCB */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 204 74% 59%; /* #4BA3E3 */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 204 74% 59%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 209 63% 49%;
+    --radius: 0.75rem;
+
+    --fluxo-blue: 209 63% 49%;
+    --fluxo-cyan: 204 74% 59%;
+    
+    /* Dedicated token matching the homepage 'Start your custom build' background */
+    --section-bg-match: 214 32% 91%; 
+  }
+
+  .dark {
+    /* Deep navy matching the Fluxo logo dark panel */
+    --background: 219 58% 7%;          /* ~#08101F — deep navy */
+    --foreground: 210 40% 98%;         /* near-white */
+    --card: 219 52% 11%;               /* ~#0F1B32 — slightly raised */
+    --card-foreground: 210 40% 98%;
+    --popover: 219 52% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 209 90% 58%;            /* brighter blue on dark */
+    --primary-foreground: 219 58% 7%;
+    --secondary: 204 84% 64%;
+    --secondary-foreground: 219 58% 7%;
+    --muted: 219 35% 16%;              /* ~#1A2740 — subtle surface */
+    --muted-foreground: 215 22% 68%;
+    --accent: 204 84% 64%;
+    --accent-foreground: 219 58% 7%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 219 32% 20%;             /* ~#242F46 */
+    --input: 219 32% 20%;
+    --ring: 209 90% 58%;
+
+    --fluxo-blue: 209 90% 58%;
+    --fluxo-cyan: 204 84% 64%;
+    --section-bg-match: 219 40% 14%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    overflow-x: clip;
+    line-height: 1.625;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  button, a, input, textarea, select {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--fluxo-blue))] via-[hsl(var(--fluxo-cyan))] to-[hsl(280,85%,65%)];
+  }
+
+  .glass {
+    @apply bg-white/60 backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:bg-black/40 dark:border-white/10 dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)];
+  }
+
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-2xl border border-white/60 shadow-lg dark:bg-slate-900/40 dark:border-slate-800;
+  }
+
+  .glass-heavy {
+    @apply bg-white/70 backdrop-blur-3xl border border-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.1)] dark:bg-slate-900/70 dark:border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-white/40 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  /* Animations */
+  .animate-fade-in { animation: fade-in 0.6s ease-out forwards; }
+  .animate-fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+  .animate-slide-in-left { animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+  .animate-slide-in-right { animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+  .animate-glow-pulse { animation: glowPulse 3s infinite alternate; }
+  .animate-pulse-slow { animation: pulseSlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(46, 127, 203, 0.2), 0 0 20px rgba(46, 127, 203, 0.1); }
+  50% { box-shadow: 0 0 25px rgba(75, 163, 227, 0.6), 0 0 50px rgba(75, 163, 227, 0.3); }
+  100% { box-shadow: 0 0 10px rgba(46, 127, 203, 0.2), 0 0 20px rgba(46, 127, 203, 0.1); }
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }

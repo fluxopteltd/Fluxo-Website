@@ -148,12 +148,13 @@ export default function SystemsConnectIntro() {
   const wordmarkWidth = wordmarkSize * 4.0;
   const lockupGap = Math.round(markDisplay * 0.28);
 
-  // Wordmark stays at the geometric centre (x=0) of the hexagon orbit.
-  // Mark forms to its LEFT — beside the wordmark, with the standard gap.
-  // Icons fly directly to these module positions; nothing shifts after.
-  const wordmarkCenterX = 0;
-  const wordmarkLeft = wordmarkCenterX - wordmarkWidth / 2;
-  const markCenterX = wordmarkLeft - lockupGap - markDisplay / 2;
+  // Centre the WHOLE LOCKUP (mark + gap + wordmark) horizontally on x=0.
+  // Previously the wordmark was anchored at x=0 with the mark hanging off
+  // to its left, which shifted the visual centre off-screen on mobile.
+  // totalWidth = markDisplay + lockupGap + wordmarkWidth.
+  // Mark sits in the LEFT third, wordmark in the RIGHT portion.
+  const markCenterX = -(lockupGap + wordmarkWidth) / 2;
+  const wordmarkCenterX = (markDisplay + lockupGap) / 2;
 
   const moduleTargets = MODULE_POSITIONS.map((p) => ({
     x: markCenterX + (p.cx - MARK_BOX.width / 2) * scale,

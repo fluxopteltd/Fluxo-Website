@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FluxoLogo from '@/components/FluxoLogo.jsx';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,21 +11,12 @@ function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <img
-                src="/logos/fluxo-light.png"
-                alt="Fluxo"
-                className="h-10 w-auto dark:hidden"
-              />
-              <img
-                src="/logos/fluxo-dark.png"
-                alt="Fluxo"
-                className="h-10 w-auto hidden dark:block"
-              />
+            <div className="flex items-center mb-6">
+              <FluxoLogo variant="full" height={40} gradientId="fluxo-footer-grad" />
             </div>
             <p className="text-sm text-primary font-bold tracking-wide uppercase mb-2">Singapore</p>
             <p className="text-sm text-foreground/80 leading-relaxed max-w-xs font-medium">
-              Operational software, built right. Tailored solutions for businesses that demand reliability.
+              Operational software, built right. Custom systems and proven SaaS for Singapore SMEs.
             </p>
           </div>
 

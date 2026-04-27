@@ -181,6 +181,7 @@ function AboutPage() {
           name="description"
           content="Fluxo builds custom operational software for SMEs. Meet the founders and learn what we believe about building software that fits real operations."
         />
+        <link rel="canonical" href="https://fluxo.com.sg/about" />
       </Helmet>
 
       <div className="min-h-screen flex flex-col bg-background selection:bg-primary/20">

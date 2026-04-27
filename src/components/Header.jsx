@@ -5,6 +5,7 @@ import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import ThemeToggle from '@/components/ThemeToggle.jsx';
+import FluxoLogo from '@/components/FluxoLogo.jsx';
 
 function Header({ visible = true }) {
   const location = useLocation();
@@ -29,17 +30,12 @@ function Header({ visible = true }) {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group">
-            <img
-              src="/logos/fluxo-light.png"
-              alt="Fluxo"
-              className="h-10 w-auto dark:hidden transition-transform duration-300 group-hover:scale-105"
-            />
-            <img
-              src="/logos/fluxo-dark.png"
-              alt="Fluxo"
-              className="h-10 w-auto hidden dark:block transition-transform duration-300 group-hover:scale-105"
-            />
+          <Link
+            to="/"
+            aria-label="Fluxo — home"
+            className="flex items-center group transition-transform duration-300 group-hover:scale-105"
+          >
+            <FluxoLogo variant="lockup" height={32} gradientId="fluxo-header-grad" />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

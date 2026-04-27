@@ -65,6 +65,32 @@ function ContactPage() {
       <Helmet>
         <title>Contact Fluxo — Get in touch</title>
         <meta name="description" content="Contact Fluxo to discuss your operational software needs. Based in Singapore, serving businesses across Southeast Asia." />
+        <link rel="canonical" href="https://fluxo.com.sg/contact" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: 'Contact Fluxo',
+          url: 'https://fluxo.com.sg/contact',
+          mainEntity: {
+            '@type': 'Organization',
+            name: 'Fluxo',
+            email: 'business@fluxo.com.sg',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Ark@KB, 68 Kaki Bukit Ave 6, #04-19',
+              addressLocality: 'Singapore',
+              postalCode: '417896',
+              addressCountry: 'SG',
+            },
+            contactPoint: {
+              '@type': 'ContactPoint',
+              contactType: 'Sales',
+              email: 'business@fluxo.com.sg',
+              areaServed: 'SG',
+              availableLanguage: ['English'],
+            },
+          },
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen flex flex-col bg-background selection:bg-primary/20">

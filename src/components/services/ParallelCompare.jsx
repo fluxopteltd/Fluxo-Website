@@ -20,7 +20,7 @@ const PLATFORM = {
   Icon: Layers,
   accent: 'from-[hsl(var(--fluxo-cyan))] to-sky-400',
   bgTint: 'bg-gradient-to-br from-[hsl(var(--fluxo-cyan))]/[0.04] to-transparent',
-  status: { label: 'Launching 2027', cls: 'bg-secondary/15 text-secondary-foreground border-secondary/30' },
+  status: { label: 'Launching 2027', cls: 'bg-secondary/15 text-foreground border-secondary/30' },
   elevator:
     'Multi-tenant SaaS distilled from the custom systems we\'ve shipped. Standard patterns, industry modules, self-service deploy.',
   steps: [

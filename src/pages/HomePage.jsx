@@ -1212,8 +1212,9 @@ function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Fluxo — One system for how your business actually runs</title>
-        <meta name="description" content="Custom operational software for SMEs. Purpose-built for how your business actually runs." />
+        <title>Fluxo — Operational software for Singapore SMEs</title>
+        <meta name="description" content="Fluxo builds operational software for Singapore SMEs. Custom systems via Fluxo Studio, proven SaaS via Fluxo Platform — purpose-built for how your business actually runs." />
+        <link rel="canonical" href="https://fluxo.com.sg/" />
       </Helmet>
 
       <div className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
@@ -1277,7 +1278,7 @@ function HomePage() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary"></span>
                   </span>
-                  Operational infrastructure for SMEs
+                  Operational software for Singapore SMEs
                 </motion.div>
 
                 {/* Headline — staggered line-by-line for Linear-style pacing */}

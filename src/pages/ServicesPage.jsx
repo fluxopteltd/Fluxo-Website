@@ -74,6 +74,32 @@ function ServicesPage() {
           name="description"
           content="Custom operational software via Fluxo Studio, or join the waitlist for Fluxo Platform launching in 2027."
         />
+        <link rel="canonical" href="https://fluxo.com.sg/services" />
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Service',
+              '@id': 'https://fluxo.com.sg/services#studio',
+              name: 'Fluxo Studio',
+              serviceType: 'Custom software development',
+              provider: { '@type': 'Organization', name: 'Fluxo', url: 'https://fluxo.com.sg' },
+              areaServed: { '@type': 'Country', name: 'Singapore' },
+              description: 'Custom operational software built end-to-end for SMEs — from process discovery through delivery and ongoing support.',
+              url: 'https://fluxo.com.sg/services',
+            },
+            {
+              '@type': 'Service',
+              '@id': 'https://fluxo.com.sg/services#platform',
+              name: 'Fluxo Platform',
+              serviceType: 'Business management SaaS',
+              provider: { '@type': 'Organization', name: 'Fluxo', url: 'https://fluxo.com.sg' },
+              areaServed: { '@type': 'Country', name: 'Singapore' },
+              description: 'Template-based operational SaaS for SMEs — opinionated, ready-to-deploy modules covering common business workflows. Launching 2027.',
+              url: 'https://fluxo.com.sg/services',
+            },
+          ],
+        })}</script>
       </Helmet>
 
       <div className="min-h-screen flex flex-col bg-background selection:bg-primary/20">
@@ -168,10 +194,12 @@ function ServicesPage() {
                     Available now
                   </span>
                 </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.15]">
-                  <span className="text-foreground font-bold">Custom-built, in weeks not months.</span>{' '}
-                  <span className="text-muted-foreground">How Studio engagements compare — and what week-by-week delivery actually looks like.</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.1]">
+                  Custom-built, in weeks not <span className="text-gradient">months.</span>
                 </h2>
+                <p className="mt-4 text-base lg:text-lg text-muted-foreground leading-relaxed">
+                  How Studio engagements compare — and what week-by-week delivery actually looks like.
+                </p>
               </motion.div>
 
               <div className="max-w-5xl mx-auto space-y-6">
@@ -225,10 +253,12 @@ function ServicesPage() {
                     Launching 2027
                   </span>
                 </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.15]">
-                  <span className="text-foreground font-bold">Built from real operations.</span>{' '}
-                  <span className="text-muted-foreground">The rollout plan, the modules we're shipping, and what waitlist members unlock.</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.1]">
+                  Built from real <span className="text-gradient">operations.</span>
                 </h2>
+                <p className="mt-4 text-base lg:text-lg text-muted-foreground leading-relaxed">
+                  The rollout plan, the modules we're shipping, and what waitlist members unlock.
+                </p>
               </motion.div>
 
               <div className="max-w-5xl mx-auto space-y-6">

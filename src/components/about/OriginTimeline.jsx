@@ -21,7 +21,7 @@ const MILESTONES = [
     year: 'April 2026',
     Icon: Users,
     title: 'Fluxo founded',
-    body: 'Jay (technical) and Daniel (commercial) start Fluxo. One co-founder already runs an operational business, so every product decision has an operator in the room.',
+    body: 'Jay (technical) and Chris (commercial) start Fluxo. One co-founder already runs an operational business, so every product decision has an operator in the room.',
     accent: 'from-blue-500 to-blue-600',
   },
   {

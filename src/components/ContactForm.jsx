@@ -9,6 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 
 const MESSAGE_MIN = 10;
 const MESSAGE_MAX = 2000;
+const HQ_URL = import.meta.env.VITE_HQ_URL || 'https://fluxo-hq.vercel.app';
 
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -48,6 +49,7 @@ function ContactForm() {
     email: '',
     phone: '',
     message: '',
+    website: '', // honeypot — real users never see or fill this
   });
   const [touched, setTouched] = useState({});
   const [errors, setErrors] = useState({});
@@ -96,34 +98,44 @@ function ContactForm() {
 
     setIsSubmitting(true);
     try {
-      const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-      submissions.push({
-        ...formData,
-        timestamp: new Date().toISOString(),
-        id: Date.now(),
+      const res = await fetch(`${HQ_URL}/api/enquiry`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, path: window.location.pathname }),
       });
-      localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
+      const json = await res.json().catch(() => ({}));
 
-      // Small delay to make the send feel real
-      await new Promise((r) => setTimeout(r, 900));
+      if (res.ok && json.ok) {
+        setSent(true);
+        toast({
+          title: 'Message sent',
+          description: "We'll get back to you within 24 hours.",
+        });
 
-      setSent(true);
-      toast({
-        title: 'Message sent',
-        description: "We'll get back to you within 24 hours.",
-      });
-
-      // Reset form after showing success state
-      setTimeout(() => {
-        setFormData({ name: '', company: '', email: '', phone: '', message: '' });
-        setTouched({});
-        setErrors({});
-        setSent(false);
-      }, 3500);
+        // Reset form after showing success state
+        setTimeout(() => {
+          setFormData({ name: '', company: '', email: '', phone: '', message: '', website: '' });
+          setTouched({});
+          setErrors({});
+          setSent(false);
+        }, 3500);
+      } else if (res.status === 429) {
+        toast({
+          title: 'Too many messages',
+          description: 'Please wait a while and try again, or email business@fluxo.com.sg directly.',
+          variant: 'destructive',
+        });
+      } else {
+        toast({
+          title: 'Failed to send message',
+          description: 'Please try again or email business@fluxo.com.sg directly.',
+          variant: 'destructive',
+        });
+      }
     } catch (err) {
       toast({
         title: 'Failed to send message',
-        description: 'Please try again or email business@fluxo.com.sg directly.',
+        description: 'Network error — please email business@fluxo.com.sg directly.',
         variant: 'destructive',
       });
     } finally {
@@ -187,6 +199,17 @@ function ContactForm() {
           onSubmit={handleSubmit}
           className="space-y-6"
         >
+          {/* Honeypot — hidden from real users; bots that fill it are dropped server-side */}
+          <input
+            type="text"
+            name="website"
+            value={formData.website}
+            onChange={handleChange}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-9999px', height: 0, width: 0, opacity: 0 }}
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <Label htmlFor="name" className="text-foreground font-medium">

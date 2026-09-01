@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import TtagMotorDemo from './pages/demo/TtagMotorDemo.jsx';
 
 function PageTransition({ children }) {
   return (
@@ -35,12 +36,29 @@ function AnimatedRoutes() {
   );
 }
 
+/**
+ * The client demo is an app shell rather than a marketing page: it sits outside
+ * AnimatePresence so switching modules keeps the shell mounted (and each module's
+ * state alive), and it skips the marketing scroll indicator.
+ */
+function SiteRoutes() {
+  return (
+    <>
+      <ScrollProgress />
+      <AnimatedRoutes />
+    </>
+  );
+}
+
 function App() {
   return (
     <Router>
-      <ScrollProgress />
       <ScrollToTop />
-      <AnimatedRoutes />
+      <Routes>
+        <Route path="/demo/ttag-motor" element={<TtagMotorDemo />} />
+        <Route path="/demo/ttag-motor/:module" element={<TtagMotorDemo />} />
+        <Route path="*" element={<SiteRoutes />} />
+      </Routes>
     </Router>
   );
 }

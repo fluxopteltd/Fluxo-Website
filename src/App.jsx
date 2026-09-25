@@ -7,6 +7,8 @@ import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import BlogIndexPage from './pages/BlogIndexPage.jsx';
+import BlogPostPage from './pages/BlogPostPage.jsx';
 
 function PageTransition({ children }) {
   return (
@@ -30,6 +32,8 @@ function AnimatedRoutes() {
         <Route path="/about" element={<PageTransition><AboutPage /></PageTransition>} />
         <Route path="/services" element={<PageTransition><ServicesPage /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
+        <Route path="/blog" element={<PageTransition><BlogIndexPage /></PageTransition>} />
+        <Route path="/blog/:slug" element={<PageTransition><BlogPostPage /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );

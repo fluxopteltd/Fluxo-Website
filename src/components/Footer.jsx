@@ -29,6 +29,9 @@ function Footer() {
               <Link to="/services" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
                 Services
               </Link>
+              <Link to="/blog" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
+                Blog
+              </Link>
               <Link to="/contact" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
                 Contact
               </Link>

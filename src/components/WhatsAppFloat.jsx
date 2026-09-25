@@ -9,9 +9,11 @@ import { WHATSAPP_DISPLAY, WHATSAPP_URL } from '@/lib/contact.js';
  *
  * Styled in Fluxo's own palette (navy glass, blue→violet gradient core and
  * rotating edge) so it belongs to the site; the WhatsApp glyph and a small
- * green status dot keep it recognisable. It slides away while the visitor
- * scrolls down (so it never sits on top of what they're reading) and comes
- * back on scroll up, when scrolling stops, or at the bottom of the page.
+ * green status dot keep it recognisable. On phones it slides away while the
+ * visitor scrolls down (so it never sits on top of what they're reading) and
+ * comes back on scroll up, when scrolling stops, or at the bottom of the
+ * page. On wider screens it sits in the corner clear of content and always
+ * stays visible.
  * Keyframes live in index.css (wa-*) and stop under reduced motion.
  */
 
@@ -29,8 +31,13 @@ function useShowOnScrollUp() {
   const idleTimer = useRef(null);
 
   useEffect(() => {
+    const phone = window.matchMedia('(max-width: 639px)');
     lastY.current = window.scrollY;
     const onScroll = () => {
+      if (!phone.matches) {
+        setVisible(true);
+        return;
+      }
       const y = window.scrollY;
       const nearBottom = window.innerHeight + y >= document.documentElement.scrollHeight - 80;
       if (y < 120 || nearBottom || y < lastY.current - 4) setVisible(true);

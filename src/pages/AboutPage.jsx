@@ -267,7 +267,7 @@ function AboutPage() {
                   <span className="text-gradient">Three become a platform.</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mt-4">
-                  Our industry-specific platforms aren't built in a lab. They grow out of real operations — from custom Studio work with real operators, in real industries, against real constraints.
+                  Our products aren't built in a lab. They grow out of real operations — from custom Studio work with real operators, in real industries, against real constraints.
                 </p>
               </motion.div>
 

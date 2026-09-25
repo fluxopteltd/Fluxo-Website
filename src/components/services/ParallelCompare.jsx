@@ -2,53 +2,53 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Layers, Wrench, Check, Sparkles, ArrowRight, Clock,
-  Search, Hammer, Rocket, Flag, Anchor, Ship, Compass,
+  Search, Hammer, Rocket, Flag, Compass,
 } from 'lucide-react';
 
 /**
  * ParallelCompare
- * Full-page Studio vs Platform comparison in two parallel vertical columns.
+ * Full-page Studio vs Products comparison in two parallel vertical columns.
  * Every row compares the same concept (header, elevator, how it works,
  * what you get, commitment, best for, CTA). On mobile, columns stack —
- * all of Platform, then all of Studio.
+ * all of Products, then all of Studio.
  */
 
 const PLATFORM = {
   key: 'platform',
-  label: 'Fluxo Platform',
-  tagline: 'Proven SaaS, ready to deploy.',
+  label: 'Fluxo Products',
+  tagline: 'Ready-made software, live today.',
   Icon: Layers,
   accent: 'from-[hsl(var(--fluxo-cyan))] to-sky-400',
   bgTint: 'bg-gradient-to-br from-[hsl(var(--fluxo-cyan))]/[0.04] to-transparent',
-  status: { label: 'Launching 2027', cls: 'bg-secondary/15 text-foreground border-secondary/30' },
+  status: { label: 'Available now', cls: 'bg-secondary/15 text-foreground border-secondary/30' },
   elevator:
-    'Multi-tenant SaaS distilled from the custom systems we\'ve shipped. Standard patterns, industry modules, self-service deploy.',
+    'Standard software products built and run by Fluxo, using patterns proven in our custom builds. Our first, Selka, lets Singapore businesses take orders, bookings and payments from one link.',
   steps: [
-    { Icon: Anchor, when: 'Q4 2026', title: 'Dive alpha', detail: 'Closed partners validate the core' },
-    { Icon: Ship, when: 'Q1 2027', title: 'Marine beta', detail: 'Studio alumni + waitlist access' },
-    { Icon: Rocket, when: 'Q2 2027', title: 'Public launch', detail: 'Open signup, 7-day free trial' },
-    { Icon: Compass, when: 'Q3 2027+', title: 'Expansion', detail: 'New verticals by demand' },
+    { Icon: Search, when: 'Minutes', title: 'Sign up', detail: 'Start on the free plan, no set-up fee' },
+    { Icon: Hammer, when: 'Same day', title: 'Set up', detail: 'Add your items, prices and payment details' },
+    { Icon: Rocket, when: 'Day one', title: 'Go live', detail: 'Share your link and start taking orders' },
+    { Icon: Compass, when: 'Any time', title: 'Grow', detail: 'Upgrade only when you need more' },
   ],
   features: [
-    'Industry-specific templates (Dive, Marine)',
-    'Multi-tenant with role-based access',
-    'Proven modules shipped in Studio builds',
-    'Self-service deploy in hours',
-    'Standard integrations (accounting, class)',
-    'Community support + shared roadmap',
+    'Ready to use, no build needed',
+    'Built and run by the Fluxo team',
+    'Free plan to start, paid plans from S$12.90/mo',
+    'PayNow and card payments built in',
+    'Regular updates at no extra cost',
+    'Support from a Singapore team',
   ],
   commitment: [
-    { label: 'Pricing', value: 'Monthly subscription' },
-    { label: 'Timeline', value: 'Hours to onboard' },
+    { label: 'Pricing', value: 'Free, then monthly plans' },
+    { label: 'Timeline', value: 'Live the same day' },
     { label: 'Commitment', value: 'Month-to-month' },
     { label: 'Infrastructure', value: 'Shared, multi-tenant' },
   ],
   bestFor: [
-    'You want to get operational fast, with proven patterns',
-    'Your workflow is mostly standard for your industry',
-    'You prefer predictable monthly cost and flexibility',
+    'You want to start today, not in weeks',
+    'What you need matches what the product already does',
+    'You want a low, predictable monthly cost',
   ],
-  cta: { href: '/contact', label: 'Join the waitlist', primary: false },
+  cta: { href: 'https://selka.sg', label: 'Explore Selka', primary: false },
 };
 
 const STUDIO = {
@@ -225,7 +225,7 @@ export default function ParallelCompare() {
             Side by side
           </p>
           <div className="text-base font-bold text-foreground">
-            Compare Platform and Studio, row by row
+            Compare Products and Studio, row by row
           </div>
         </div>
         <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">

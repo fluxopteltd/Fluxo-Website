@@ -7,7 +7,7 @@ import {
 /**
  * PlatformOrigin
  * "Distilled from Studio" — four concrete patterns that started as custom
- * Studio builds and are becoming Platform modules. Makes the flywheel
+ * Studio builds and are becoming reusable product modules. Makes the flywheel
  * tangible instead of abstract.
  */
 
@@ -50,11 +50,11 @@ export default function PlatformOrigin() {
           The flywheel
         </p>
         <div className="text-base font-bold text-foreground">
-          What Studio proves → what Platform ships
+          What Studio proves → what our products reuse
         </div>
         <p className="text-xs text-muted-foreground mt-1">
-          Every module in Platform starts as a Studio build solving a real problem.
-          Then we generalize, harden, and release it.
+          Every Fluxo product reuses patterns first built in Studio to solve a real problem.
+          We generalise them, harden them, then release them.
         </p>
       </div>
 
@@ -81,7 +81,7 @@ export default function PlatformOrigin() {
                   <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-1.5 flex-wrap">
                     <span>Studio origin</span>
                     <ArrowRight className="w-3 h-3" />
-                    <span className="text-primary">Platform module</span>
+                    <span className="text-primary">Product module</span>
                   </div>
                   <div className="flex items-center gap-1.5 flex-wrap">
                     <span className="text-xs text-muted-foreground">{p.origin}</span>

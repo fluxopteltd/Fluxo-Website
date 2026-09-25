@@ -9,6 +9,8 @@ import ServicesPage from './pages/ServicesPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import BlogIndexPage from './pages/BlogIndexPage.jsx';
 import BlogPostPage from './pages/BlogPostPage.jsx';
+import PrivacyPage from './pages/PrivacyPage.jsx';
+import TermsPage from './pages/TermsPage.jsx';
 
 function PageTransition({ children }) {
   return (
@@ -23,7 +25,7 @@ function PageTransition({ children }) {
   );
 }
 
-function AnimatedRoutes() {
+export function AnimatedRoutes() {
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
@@ -34,6 +36,8 @@ function AnimatedRoutes() {
         <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
         <Route path="/blog" element={<PageTransition><BlogIndexPage /></PageTransition>} />
         <Route path="/blog/:slug" element={<PageTransition><BlogPostPage /></PageTransition>} />
+        <Route path="/privacy" element={<PageTransition><PrivacyPage /></PageTransition>} />
+        <Route path="/terms" element={<PageTransition><TermsPage /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );

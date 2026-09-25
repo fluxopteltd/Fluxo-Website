@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Clock, Plus } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock, Plus, MessageCircle } from 'lucide-react';
+import { WHATSAPP_DISPLAY, WHATSAPP_URL } from '@/lib/contact.js';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import Inline from '@/components/blog/Inline.jsx';
@@ -144,10 +145,6 @@ function BlogPostPage() {
         <title>{post.seoTitle}</title>
         <meta name="description" content={post.description} />
         <link rel="canonical" href={url} />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.description} />
-        <meta property="og:url" content={url} />
         <script type="application/ld+json">{JSON.stringify(postJsonLd(post))}</script>
       </Helmet>
 
@@ -236,12 +233,22 @@ function BlogPostPage() {
                     <p className="relative text-[10px] font-mono uppercase tracking-wider text-primary mb-3">{post.cta.eyebrow}</p>
                     <h2 className="relative text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-3">{post.cta.heading}</h2>
                     <p className="relative text-foreground/80 leading-relaxed mb-7 max-w-xl">{post.cta.body}</p>
-                    <Link
-                      to="/contact"
-                      className="relative inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
-                    >
-                      {post.cta.button} <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    <div className="relative flex flex-wrap gap-3">
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                      >
+                        {post.cta.button} <ArrowRight className="w-4 h-4" />
+                      </Link>
+                      <a
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-xl border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground hover:border-primary/40 transition-colors"
+                      >
+                        <MessageCircle className="w-4 h-4" /> WhatsApp {WHATSAPP_DISPLAY}
+                      </a>
+                    </div>
                   </section>
                 </div>
               </div>

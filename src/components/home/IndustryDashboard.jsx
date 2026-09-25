@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Anchor, Wrench, UtensilsCrossed, FileCheck,
+  Anchor, Wrench, UtensilsCrossed, ShieldCheck,
   Search, Filter, Plus, ArrowUpRight, ChevronRight, ChevronLeft,
   Pause, Ship, MapPin, Users2, Clock, Activity,
 } from 'lucide-react';
@@ -109,32 +109,32 @@ const INDUSTRIES = {
     ],
   },
 
-  insurance: {
-    label: 'Claims processing',
-    Icon: FileCheck,
-    url: 'fluxo.app/claims',
-    primaryMetric: { label: 'Claims cycle time', value: '6.2d', delta: '-18%' },
+  hse: {
+    label: 'Safety & compliance',
+    Icon: ShieldCheck,
+    url: 'fluxo.app/hse',
+    primaryMetric: { label: 'Permits closed this week', value: '64', delta: '+15%' },
     kpis: [
-      { label: 'Claims open', value: '38' },
-      { label: 'Adjusters', value: '6' },
-      { label: 'Payouts (wk)', value: '$142K' },
-      { label: 'SLA hit rate', value: '94%' },
+      { label: 'Open permits', value: '23' },
+      { label: 'Workers on site', value: '86' },
+      { label: 'Toolbox talks', value: '12' },
+      { label: 'Training current', value: '97%' },
     ],
     jobs: [
-      { id: 'CL-0521', title: 'Motor · collision — Jurong', meta: 'Adjuster · J. Tan', tag: 'Motor', status: 'progress' },
-      { id: 'CL-0520', title: 'Property · water damage', meta: 'Adjuster · M. Rahman', tag: 'Property', status: 'progress' },
-      { id: 'CL-0519', title: 'Health · hospital bill review', meta: 'Desk review', tag: 'Health', status: 'scheduled' },
-      { id: 'CL-0518', title: 'Motor · total loss assessment', meta: 'Awaiting docs', tag: 'Motor', status: 'blocked' },
+      { id: 'PTW-1142', title: 'Hot work — Deck 2', meta: 'Supervisor · Crew B', tag: 'Permit', status: 'progress' },
+      { id: 'PTW-1141', title: 'Confined space entry — Tank 3', meta: 'Gas test pending', tag: 'Permit', status: 'blocked' },
+      { id: 'INC-0087', title: 'Near-miss — dropped object', meta: 'HSE officer review', tag: 'Incident', status: 'progress' },
+      { id: 'AUD-0212', title: 'Monthly site inspection', meta: 'HSE team · Tue', tag: 'Audit', status: 'scheduled' },
     ],
-    chartLabel: 'Avg cycle time · last 8 weeks (days)',
+    chartLabel: 'Near-misses reported · last 8 weeks',
     chartData: [
-      { x: 'W10', v: 9.1 }, { x: 'W11', v: 8.4 }, { x: 'W12', v: 8.8 },
-      { x: 'W13', v: 7.9 }, { x: 'W14', v: 7.5 }, { x: 'W15', v: 7.1 },
-      { x: 'W16', v: 6.6 }, { x: 'W17', v: 6.2 },
+      { x: 'W10', v: 5 }, { x: 'W11', v: 7 }, { x: 'W12', v: 6 },
+      { x: 'W13', v: 9 }, { x: 'W14', v: 8 }, { x: 'W15', v: 11 },
+      { x: 'W16', v: 10 }, { x: 'W17', v: 12 },
     ],
     side: [
-      { label: 'Pending docs', value: '11', sub: 'claims', tone: 'warn' },
-      { label: 'Escalations', value: '2', sub: 'needs review', tone: 'alert' },
+      { label: 'Certs expiring', value: '5', sub: 'next 30 days', tone: 'warn' },
+      { label: 'Overdue actions', value: '2', sub: 'corrective', tone: 'alert' },
     ],
   },
 };
@@ -338,13 +338,13 @@ function FnbWidget() {
   );
 }
 
-function InsuranceWidget() {
+function HseWidget() {
   const stages = [
-    { key: 'filed', label: 'Filed', count: 38, color: 'bg-slate-400' },
-    { key: 'review', label: 'Review', count: 27, color: 'bg-blue-500' },
-    { key: 'adjust', label: 'Adjusting', count: 18, color: 'bg-violet-500' },
-    { key: 'approve', label: 'Approved', count: 11, color: 'bg-emerald-500' },
-    { key: 'paid', label: 'Paid', count: 9, color: 'bg-foreground' },
+    { key: 'requested', label: 'Requested', count: 31, color: 'bg-slate-400' },
+    { key: 'assessed', label: 'Risk assessed', count: 26, color: 'bg-blue-500' },
+    { key: 'approved', label: 'Approved', count: 19, color: 'bg-violet-500' },
+    { key: 'active', label: 'Active', count: 14, color: 'bg-emerald-500' },
+    { key: 'closed', label: 'Closed', count: 12, color: 'bg-foreground' },
   ];
   const max = stages[0].count;
 
@@ -353,9 +353,9 @@ function InsuranceWidget() {
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <Activity className="w-3.5 h-3.5 text-primary" />
-          <span className="text-xs font-semibold text-foreground">Claims pipeline · this week</span>
+          <span className="text-xs font-semibold text-foreground">Permit-to-work pipeline · this week</span>
         </div>
-        <span className="text-[10px] text-muted-foreground">Avg cycle 6.2d</span>
+        <span className="text-[10px] text-muted-foreground">0 lost-time injuries</span>
       </div>
       <div className="flex items-end gap-2 h-28">
         {stages.map((s, i) => (
@@ -389,7 +389,7 @@ const WIDGETS = {
   marine: MarineWidget,
   automotive: AutomotiveWidget,
   fnb: FnbWidget,
-  insurance: InsuranceWidget,
+  hse: HseWidget,
 };
 
 // ---------- SHARED ----------

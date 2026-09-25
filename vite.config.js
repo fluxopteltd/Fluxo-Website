@@ -1,10 +1,10 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import prerenderBlog from './scripts/prerender-blog.js';
+import previewRoutes from './scripts/preview-routes.js';
 
 export default defineConfig({
-  plugins: [react(), prerenderBlog()],
+  plugins: [react(), previewRoutes()],
   server: {
     port: 3000,
   },

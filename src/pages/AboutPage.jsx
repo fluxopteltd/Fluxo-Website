@@ -129,7 +129,7 @@ function AboutPage() {
         "Jay leads Fluxo's product and technical delivery. He combines modern AI-assisted development with careful product judgment to deliver custom software faster and more affordably than traditional agencies — the approach that makes Fluxo's pricing possible.",
       initials: 'JY',
       colorClass: 'bg-primary text-primary-foreground',
-      imageUrl: 'https://horizons-cdn.hostinger.com/8f55ef6f-5309-4b13-9798-cfdd2e348dec/7119735afb44a5f0f39f646fb7f4b4fe.png',
+      imageUrl: '/team/jay.webp',
     },
     {
       name: 'Chris',
@@ -138,7 +138,7 @@ function AboutPage() {
         "Chris leads Fluxo's commercial relationships. He runs an operational business himself, which gives Fluxo a direct, unfiltered view of what SMEs actually need from software — and what they don't.",
       initials: 'CH',
       colorClass: 'bg-secondary text-secondary-foreground',
-      imageUrl: 'https://horizons-cdn.hostinger.com/8f55ef6f-5309-4b13-9798-cfdd2e348dec/98264a6a87e6b7b3325faa1605886079.png',
+      imageUrl: '/team/chris.webp',
     },
   ];
 

@@ -15,7 +15,7 @@
   2. After merge + deploy: curl live routes as GPTBot (expect full text, one <title>), check WhatsApp share preview.
   3. Submit: IndexNow ping (api.indexnow.org, key above, host fluxo.com.sg) for Bing; Jay adds sitemap in Google Search Console (domain already has google-site-verification TXT; DNS on Vercel).
 - **Still open / needs Jay:**
-  - Founder photos: hostinger CDN files are gone (404, no archive). Page shows initials. Need new headshots → put in `public/team/`.
+  - Founder photos DONE (25 Sep): illustrated portraits in `public/team/{jay,chris}.webp` (400px crops); originals archived in OneDrive `Desktop/Fluxo/1. Fluxo Documents/Founder Photos/`.
   - Timeline wording site-wide = Jay's figures (25 Sep): first module ~6 weeks (42 days), full system ~14 weeks.
   - DPAs: Vercel (Pro), Supabase, Resend DPAs are incorporated by accepting their ToS (verified 25 Sep) — privacy wording OK. Jay deletes non-converting HQ enquiries BY HAND (no purge job). Consider registering DPO on BizFile+.
   - "24-month support minimum" on Studio confirmed by Jay (25 Sep).

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Hammer, Eye, Layers, Rocket, ArrowRight, Anchor, Wrench, UtensilsCrossed, FileCheck,
+  Hammer, Eye, Layers, Rocket, ArrowRight, Anchor, ShoppingBag, ShieldCheck, Landmark,
 } from 'lucide-react';
 
 /**
@@ -38,7 +38,7 @@ const PHASES = [
     Icon: Layers,
     title: 'Extract the patterns',
     sub: '80% common · 20% unique',
-    body: 'After two or three builds in the same industry, patterns repeat. We extract the common 80% into a platform template.',
+    body: 'After two or three builds in the same industry, patterns repeat. We extract the common 80% into a product.',
     color: 'from-violet-500 to-violet-600',
     dot: 'bg-violet-500',
   },
@@ -46,9 +46,9 @@ const PHASES = [
     key: 'platform',
     num: '04',
     Icon: Rocket,
-    title: 'Launch the platform',
-    sub: 'SaaS for the industry',
-    body: 'The platform ships with proven patterns baked in. New operators deploy in hours with the compliance, workflows, and quirks already handled.',
+    title: 'Launch the product',
+    sub: 'Ready-made for the industry',
+    body: 'The product ships with proven patterns built in. New businesses start in hours, with the compliance, workflows and quirks already handled.',
     color: 'from-primary to-[hsl(var(--fluxo-cyan))]',
     dot: 'bg-primary',
   },
@@ -56,28 +56,28 @@ const PHASES = [
 
 const PIPELINE = [
   {
+    industry: 'Retail',
+    Icon: ShoppingBag,
+    studio: { name: 'Live-sale order management', status: 'live' },
+    platform: { name: 'Selka', status: 'live' },
+  },
+  {
     industry: 'Marine',
     Icon: Anchor,
-    studio: { name: 'Dive operations system', status: 'live' },
-    platform: { name: 'Naming in progress', status: 'building' },
+    studio: { name: 'Dive operations & compliance', status: 'live' },
+    platform: { name: 'To be decided', status: 'pending' },
   },
   {
-    industry: 'Automotive',
-    Icon: Wrench,
-    studio: { name: 'Workshop management system', status: 'building' },
-    platform: { name: 'To be named', status: 'pending' },
+    industry: 'Offshore',
+    Icon: ShieldCheck,
+    studio: { name: 'Safety & compliance platform', status: 'testing' },
+    platform: { name: 'To be decided', status: 'pending' },
   },
   {
-    industry: 'F&B',
-    Icon: UtensilsCrossed,
-    studio: { name: 'F&B operations system', status: 'building' },
-    platform: { name: 'To be named', status: 'pending' },
-  },
-  {
-    industry: 'Insurance',
-    Icon: FileCheck,
-    studio: { name: 'Claims processing system', status: 'prototype' },
-    platform: { name: 'To be named', status: 'pending' },
+    industry: 'Financing',
+    Icon: Landmark,
+    studio: { name: 'Client & deal CRM', status: 'live' },
+    platform: { name: 'To be decided', status: 'pending' },
   },
 ];
 
@@ -85,6 +85,7 @@ const STATUS_STYLES = {
   live: 'bg-emerald-500/15 text-emerald-700 border-emerald-500/30 dark:text-emerald-300',
   building: 'bg-primary/15 text-primary border-primary/30',
   prototype: 'bg-amber-500/15 text-amber-700 border-amber-500/30 dark:text-amber-300',
+  testing: 'bg-amber-500/15 text-amber-700 border-amber-500/30 dark:text-amber-300',
   pending: 'bg-muted text-muted-foreground border-border',
 };
 
@@ -240,7 +241,7 @@ export default function IndustryFlywheel() {
 
                 {/* Platform */}
                 <div className="flex items-center gap-2 min-w-0 md:col-span-1 col-span-2">
-                  <span className="text-[10px] font-mono text-muted-foreground flex-shrink-0">Platform:</span>
+                  <span className="text-[10px] font-mono text-muted-foreground flex-shrink-0">Product:</span>
                   <span className="text-sm text-foreground truncate">{row.platform.name}</span>
                   <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded border flex-shrink-0 ${STATUS_STYLES[row.platform.status]}`}>
                     {row.platform.status}
@@ -252,7 +253,7 @@ export default function IndustryFlywheel() {
         </div>
 
         <div className="px-5 py-3 border-t border-border bg-muted/10 text-[11px] text-muted-foreground">
-          One custom build is a product. Three custom builds become a platform. That's the flywheel.
+          Custom builds teach us an industry. The patterns that repeat become products. That's the flywheel.
         </div>
       </div>
     </div>

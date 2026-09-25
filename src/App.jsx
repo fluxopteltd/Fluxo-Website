@@ -2,11 +2,16 @@ import React from 'react';
 import { Route, Routes, BrowserRouter as Router, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppFloat from '@/components/WhatsAppFloat.jsx';
 import ScrollProgress from '@/components/ScrollProgress.jsx';
 import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ServicesPage from './pages/ServicesPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import BlogIndexPage from './pages/BlogIndexPage.jsx';
+import BlogPostPage from './pages/BlogPostPage.jsx';
+import PrivacyPage from './pages/PrivacyPage.jsx';
+import TermsPage from './pages/TermsPage.jsx';
 
 function PageTransition({ children }) {
   return (
@@ -21,7 +26,7 @@ function PageTransition({ children }) {
   );
 }
 
-function AnimatedRoutes() {
+export function AnimatedRoutes() {
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
@@ -30,6 +35,10 @@ function AnimatedRoutes() {
         <Route path="/about" element={<PageTransition><AboutPage /></PageTransition>} />
         <Route path="/services" element={<PageTransition><ServicesPage /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
+        <Route path="/blog" element={<PageTransition><BlogIndexPage /></PageTransition>} />
+        <Route path="/blog/:slug" element={<PageTransition><BlogPostPage /></PageTransition>} />
+        <Route path="/privacy" element={<PageTransition><PrivacyPage /></PageTransition>} />
+        <Route path="/terms" element={<PageTransition><TermsPage /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );
@@ -41,6 +50,7 @@ function App() {
       <ScrollProgress />
       <ScrollToTop />
       <AnimatedRoutes />
+      <WhatsAppFloat />
     </Router>
   );
 }

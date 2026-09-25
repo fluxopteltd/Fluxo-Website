@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FluxoLogo from '@/components/FluxoLogo.jsx';
+import { WHATSAPP_DISPLAY, WHATSAPP_URL } from '@/lib/contact.js';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,8 +17,16 @@ function Footer() {
             </div>
             <p className="text-sm text-primary font-bold tracking-wide uppercase mb-2">Singapore</p>
             <p className="text-sm text-foreground/80 leading-relaxed max-w-xs font-medium">
-              Operational software, built right. Custom systems and proven SaaS for Singapore SMEs.
+              Operational software, built right. Custom systems and ready-made software for Singapore SMEs.
             </p>
+            <div className="mt-5 flex flex-col gap-1.5 text-sm font-medium">
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-primary transition-colors">
+                WhatsApp {WHATSAPP_DISPLAY}
+              </a>
+              <a href="mailto:business@fluxo.com.sg" className="text-foreground/80 hover:text-primary transition-colors">
+                business@fluxo.com.sg
+              </a>
+            </div>
           </div>
 
           <div>
@@ -29,6 +38,9 @@ function Footer() {
               <Link to="/services" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
                 Services
               </Link>
+              <Link to="/blog" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
+                Blog
+              </Link>
               <Link to="/contact" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
                 Contact
               </Link>
@@ -38,12 +50,12 @@ function Footer() {
           <div>
             <p className="font-bold text-foreground mb-4">Legal</p>
             <nav className="flex flex-col gap-3">
-              <a href="#" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
+              <Link to="/privacy" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
-                Terms of Service
-              </a>
+              </Link>
+              <Link to="/terms" className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors">
+                Terms of Use
+              </Link>
             </nav>
             <p className="text-xs font-medium text-foreground/60 mt-6 leading-relaxed">
               This website complies with Singapore's Personal Data Protection Act (PDPA).

@@ -7,9 +7,7 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import StudioRoadmap from '@/components/services/StudioRoadmap.jsx';
 import VelocityCompare from '@/components/services/VelocityCompare.jsx';
-import PlatformRoadmap from '@/components/services/PlatformRoadmap.jsx';
 import PlatformOrigin from '@/components/services/PlatformOrigin.jsx';
-import WaitlistPerks from '@/components/services/WaitlistPerks.jsx';
 import ParallelCompare from '@/components/services/ParallelCompare.jsx';
 
 function GridPattern({ opacity = 0.25 }) {
@@ -69,10 +67,10 @@ function ServicesPage() {
   return (
     <>
       <Helmet>
-        <title>Services — Fluxo Studio and Platform</title>
+        <title>Services — Fluxo Studio and Fluxo Products</title>
         <meta
           name="description"
-          content="Custom operational software via Fluxo Studio, or join the waitlist for Fluxo Platform launching in 2027."
+          content="Custom operational software built around your workflow with Fluxo Studio, or ready-made software you can use today with Fluxo Products, including Selka."
         />
         <link rel="canonical" href="https://fluxo.com.sg/services" />
         <script type="application/ld+json">{JSON.stringify({
@@ -90,12 +88,12 @@ function ServicesPage() {
             },
             {
               '@type': 'Service',
-              '@id': 'https://fluxo.com.sg/services#platform',
-              name: 'Fluxo Platform',
-              serviceType: 'Business management SaaS',
+              '@id': 'https://fluxo.com.sg/services#products',
+              name: 'Fluxo Products',
+              serviceType: 'Software as a service',
               provider: { '@type': 'Organization', name: 'Fluxo', url: 'https://fluxo.com.sg' },
               areaServed: { '@type': 'Country', name: 'Singapore' },
-              description: 'Template-based operational SaaS for SMEs — opinionated, ready-to-deploy modules covering common business workflows. Launching 2027.',
+              description: 'Ready-made software products built and run by Fluxo for Singapore businesses, starting with Selka for online orders, bookings and payments.',
               url: 'https://fluxo.com.sg/services',
             },
           ],
@@ -140,13 +138,13 @@ function ServicesPage() {
                   transition={{ delay: 1.7, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                   className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
                 >
-                  <span className="text-foreground font-medium">Fluxo Studio</span> for custom systems shaped around your operation. <span className="text-foreground font-medium">Fluxo Platform</span> for proven SaaS you can deploy fast.
+                  <span className="text-foreground font-medium">Fluxo Studio</span> for custom systems shaped around your operation. <span className="text-foreground font-medium">Fluxo Products</span> for ready-made software you can use today.
                 </motion.p>
               </div>
             </div>
           </section>
 
-          {/* PARALLEL COMPARE — Studio and Platform side by side */}
+          {/* PARALLEL COMPARE — Studio and Products side by side */}
           <section id="compare" className="py-24 lg:py-28 relative border-t border-border/50 scroll-mt-20">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
@@ -195,7 +193,7 @@ function ServicesPage() {
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.1]">
-                  Custom-built, in weeks not <span className="text-gradient">months.</span>
+                  First module in 6 weeks. <span className="text-gradient">Full system in 14.</span>
                 </h2>
                 <p className="mt-4 text-base lg:text-lg text-muted-foreground leading-relaxed">
                   How Studio engagements compare — and what week-by-week delivery actually looks like.
@@ -247,29 +245,55 @@ function ServicesPage() {
                 className="max-w-3xl mx-auto mb-12"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Fluxo Platform · deeper look</p>
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/15 text-secondary-foreground text-[10px] font-mono uppercase tracking-wider border border-secondary/30">
+                  <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Fluxo Products · deeper look</p>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-mono uppercase tracking-wider border border-primary/20">
                     <Sparkles className="w-3 h-3" />
-                    Launching 2027
+                    Available now
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.1]">
                   Built from real <span className="text-gradient">operations.</span>
                 </h2>
                 <p className="mt-4 text-base lg:text-lg text-muted-foreground leading-relaxed">
-                  The rollout plan, the modules we're shipping, and what waitlist members unlock.
+                  Ready-made software built from what our custom work proves, live and ready to use today.
                 </p>
               </motion.div>
 
               <div className="max-w-5xl mx-auto space-y-6">
-                <motion.div
+                <motion.a
+                  href="https://selka.sg"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  className="group block bg-card border border-border rounded-2xl p-6 lg:p-8 shadow-sm hover:border-primary/40 transition-colors"
                 >
-                  <PlatformRoadmap />
-                </motion.div>
+                  <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground">Product 01</p>
+                        <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider border bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/25">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                          Live
+                        </span>
+                      </div>
+                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">Selka</h3>
+                      <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+                        Online storefront, orders, bookings and PayNow payments for Singapore businesses, all from one link your customers can open on WhatsApp or Instagram. No commission on sales.
+                      </p>
+                    </div>
+                    <div className="md:text-right flex-shrink-0">
+                      <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-1">Pricing</p>
+                      <p className="text-sm font-medium text-foreground">Free to start</p>
+                      <p className="text-sm text-muted-foreground mb-4">Paid plans from S$12.90/mo</p>
+                      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                        Visit selka.sg <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                      </span>
+                    </div>
+                  </div>
+                </motion.a>
 
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
@@ -280,14 +304,6 @@ function ServicesPage() {
                   <PlatformOrigin />
                 </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  <WaitlistPerks />
-                </motion.div>
               </div>
             </div>
           </section>

@@ -16,7 +16,7 @@ import LiveOpsMockup from '@/components/home/LiveOpsMockup.jsx';
 import IndustryDashboard from '@/components/home/IndustryDashboard.jsx';
 import FlowTimeline from '@/components/home/FlowTimeline.jsx';
 import ReportFlow from '@/components/home/ReportFlow.jsx';
-import SocialProof from '@/components/home/SocialProof.jsx';
+import RealWork from '@/components/home/RealWork.jsx';
 import WhichFit from '@/components/home/WhichFit.jsx';
 import SystemsConnectIntro, { SYSTEMS_CONNECT_INTRO_DURATION, SYSTEMS_CONNECT_HANDOFF_AT } from '@/components/home/SystemsConnectIntro.jsx';
 
@@ -35,7 +35,7 @@ import SystemsConnectIntro, { SYSTEMS_CONNECT_INTRO_DURATION, SYSTEMS_CONNECT_HA
  *   4. Feature 2: Scheduling (INTERACTIVE kanban board)
  *   5. Feature 3: Teams & Compliance (INTERACTIVE team dashboard)
  *   6. Feature 4: Analytics (INTERACTIVE charts)
- *   7. What We Build (Studio + Platform cards)
+ *   7. What We Build (Studio + Products cards)
  *   8. Closing CTA
  * =====================================================================
  */
@@ -1089,7 +1089,7 @@ function SectionHeader({ headline, description, sectionNumber, sectionName, avai
             {(availability === 'both' || availability === 'platform') && (
               <span className="inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--fluxo-cyan))]" />
-                <span className="text-foreground font-medium">Platform</span>
+                <span className="text-foreground font-medium">Products</span>
               </span>
             )}
           </span>
@@ -1213,7 +1213,7 @@ function HomePage() {
     <>
       <Helmet>
         <title>Fluxo — Operational software for Singapore SMEs</title>
-        <meta name="description" content="Fluxo builds operational software for Singapore SMEs. Custom systems via Fluxo Studio, proven SaaS via Fluxo Platform — purpose-built for how your business actually runs." />
+        <meta name="description" content="Fluxo builds operational software for Singapore SMEs. Custom systems via Fluxo Studio, ready-made software via Fluxo Products — purpose-built for how your business actually runs." />
         <link rel="canonical" href="https://fluxo.com.sg/" />
       </Helmet>
 
@@ -1306,7 +1306,7 @@ function HomePage() {
                   transition={{ delay: 1.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                   className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
                 >
-                  <span className="text-foreground font-medium">Fluxo Studio</span> builds custom systems shaped around your operation. <span className="text-foreground font-medium">Fluxo Platform</span> delivers proven SaaS you can deploy fast.
+                  <span className="text-foreground font-medium">Fluxo Studio</span> builds custom systems shaped around your operation. <span className="text-foreground font-medium">Fluxo Products</span> is ready-made software you can start using today.
                 </motion.p>
 
                 <motion.div
@@ -1329,8 +1329,8 @@ function HomePage() {
                     className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-background border border-border hover:border-secondary/50 hover:bg-secondary/5 transition-colors text-xs"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--fluxo-cyan))]" />
-                    <span className="font-semibold text-foreground">Platform</span>
-                    <span className="text-muted-foreground">— SaaS products</span>
+                    <span className="font-semibold text-foreground">Products</span>
+                    <span className="text-muted-foreground">— ready-made software</span>
                     <ArrowRight className="w-3 h-3 text-muted-foreground group-hover:translate-x-0.5 transition-transform" />
                   </a>
                 </motion.div>
@@ -1382,7 +1382,7 @@ function HomePage() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <SectionHeader
                 headline={<>Any industry. <br /> Any <span className="text-gradient">workflow.</span></>}
-                description="Marine, automotive, F&B, insurance — or something we haven't built yet. Swipe through example operational systems Fluxo ships — whether custom-built for you (Studio) or ready to deploy (Platform)."
+                description="Swipe through examples of the operational systems Fluxo builds through Studio. For orders, bookings and PayNow payments, Selka is ready to use today through Fluxo Products. Don't see your industry? That's usually where the interesting work is."
                 sectionNumber="1.0"
                 sectionName="Versatility"
                 availability="both"
@@ -1529,7 +1529,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* SOCIAL PROOF — testimonial carousel (moved below features) */}
+          {/* REAL WORK — systems we've actually built (no invented testimonials) */}
           <section className="py-24 lg:py-28 relative border-t border-border/50 bg-muted/20">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
@@ -1539,13 +1539,13 @@ function HomePage() {
                 transition={{ duration: 0.6 }}
                 className="max-w-3xl mx-auto mb-12 text-center"
               >
-                <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-3">Real operators</p>
+                <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-3">Real work</p>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.15]">
-                  Built with operators. <span className="text-gradient">Running on their operations.</span>
+                  Built with operators. <span className="text-gradient">Shaped by real operations.</span>
                 </h2>
               </motion.div>
 
-              <SocialProof />
+              <RealWork />
             </div>
           </section>
 
@@ -1578,20 +1578,20 @@ function HomePage() {
                 >
                   <div className="absolute -top-20 -right-20 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
                   <div className="relative">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/15 text-secondary-foreground text-[10px] font-mono uppercase tracking-wider mb-6 border border-secondary/30">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-mono uppercase tracking-wider mb-6 border border-primary/20">
                       <Sparkles className="w-3 h-3" />
-                      Coming 2027
+                      Available now
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">Fluxo Platform</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-4">Fluxo Products</h3>
                     <p className="text-muted-foreground mb-8 leading-relaxed">
-                      Multi-tenant SaaS, distilled from the custom systems we've shipped. Deploy in hours with proven patterns already built in.
+                      Ready-made software built and run by Fluxo, using patterns proven in our custom builds. Our first product, Selka, lets Singapore businesses take orders, bookings and PayNow payments from one link.
                     </p>
                     <div className="mb-8 bg-background/60 backdrop-blur rounded-xl p-4 border border-border">
-                      <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-1">Availability</p>
-                      <p className="text-sm font-medium text-foreground">Launching 2027 — early access on request</p>
+                      <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-1">Live now</p>
+                      <p className="text-sm font-medium text-foreground">Selka — free to start, paid plans from S$12.90/mo</p>
                     </div>
                     <Button variant="outline" className="w-full h-11 text-sm border-border bg-background hover:bg-muted rounded-full" asChild>
-                      <a href="/services">Join the waitlist</a>
+                      <a href="https://selka.sg" target="_blank" rel="noopener noreferrer">Explore Selka</a>
                     </Button>
                   </div>
                 </motion.div>

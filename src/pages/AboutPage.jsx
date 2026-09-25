@@ -129,7 +129,7 @@ function AboutPage() {
         "Jay leads Fluxo's product and technical delivery. He combines modern AI-assisted development with careful product judgment to deliver custom software faster and more affordably than traditional agencies — the approach that makes Fluxo's pricing possible.",
       initials: 'JY',
       colorClass: 'bg-primary text-primary-foreground',
-      imageUrl: 'https://horizons-cdn.hostinger.com/8f55ef6f-5309-4b13-9798-cfdd2e348dec/7119735afb44a5f0f39f646fb7f4b4fe.png',
+      imageUrl: '/team/jay.webp',
     },
     {
       name: 'Chris',
@@ -138,7 +138,7 @@ function AboutPage() {
         "Chris leads Fluxo's commercial relationships. He runs an operational business himself, which gives Fluxo a direct, unfiltered view of what SMEs actually need from software — and what they don't.",
       initials: 'CH',
       colorClass: 'bg-secondary text-secondary-foreground',
-      imageUrl: 'https://horizons-cdn.hostinger.com/8f55ef6f-5309-4b13-9798-cfdd2e348dec/98264a6a87e6b7b3325faa1605886079.png',
+      imageUrl: '/team/chris.webp',
     },
   ];
 
@@ -153,9 +153,9 @@ function AboutPage() {
     {
       fig: '02',
       Icon: Zap,
-      title: 'Weeks, not months',
+      title: 'Six weeks to first launch',
       body: 'Modern development has changed the economics. What used to require agency teams and year-long timelines now ships in a fraction of the time — without skipping the rigour.',
-      example: "Our first Studio client went from signing the scope to running the system in production in 42 days. Same scope quoted elsewhere at 9–12 months. The difference isn't skipping steps — it's not carrying the overhead of a traditional agency.",
+      example: "A typical Studio build puts its first module into production in about 6 weeks (42 days), and the full system is complete in about 14 weeks. Similar scopes are often quoted at 9–12 months elsewhere. The difference isn't skipping steps — it's not carrying the overhead of a traditional agency.",
     },
     {
       fig: '03',
@@ -243,7 +243,7 @@ function AboutPage() {
                   The old rules no longer <span className="text-gradient">have to apply.</span>
                 </h2>
                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Fluxo exists because modern development has compressed what used to take agency teams a year into what a small, senior team can ship in weeks. Here's how we got from observation to operating across four industries.
+                  Fluxo exists because modern development has compressed what used to take agency teams a year into what a small, senior team can ship in a few months. Here's how we got from observation to operating across four industries.
                 </p>
               </motion.div>
 
@@ -263,11 +263,11 @@ function AboutPage() {
               >
                 <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-3">The flywheel</p>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.15]">
-                  One custom build is a product. <br className="hidden sm:inline" />
-                  <span className="text-gradient">Three become a platform.</span>
+                  Custom builds teach us an industry. <br className="hidden sm:inline" />
+                  <span className="text-gradient">What repeats becomes a product.</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mt-4">
-                  Our industry-specific platforms aren't built in a lab. They grow out of real operations — from custom Studio work with real operators, in real industries, against real constraints.
+                  Our products aren't built in a lab. They grow out of real operations — from custom Studio work with real operators, in real industries, against real constraints.
                 </p>
               </motion.div>
 

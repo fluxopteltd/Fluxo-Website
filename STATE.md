@@ -1,0 +1,23 @@
+# ⭐ RESUME — fluxo-website (updated 2026-09-25)
+
+- **Branch:** `feature/blog-why-fluxo` PUSHED 25 Sep → **PR #3** (https://github.com/fluxopteltd/Fluxo-Website/pull/3), CodeRabbit reviewing. Vercel preview built + verified: all 8 routes serve prerendered HTML to GPTBot (1 title each, 17–132 kB), static files OK. NOT merged — merge = prod deploy, needs Jay. main = `73ec157` (live on fluxo.com.sg). No DB/migrations.
+- **Shipped this session (local, commits 70ebb0f → 2a0568f):**
+  - /blog + article "Looking for a custom software developer in Singapore? Here is why SMEs choose Fluxo" (`src/content/posts.js`).
+  - **Whole site prerendered**: `npm run build` = client build → SSR build of `src/entry-server.jsx` → `scripts/prerender.mjs` writes `dist/<route>/index.html` (title/description/canonical/OG/JSON-LD + full text). `dist/_spa.html` = untouched shell for the catch-all rewrite. vercel.json has explicit per-route rewrites. New public route ⇒ add it to `routes` in entry-server.jsx AND vercel.json AND sitemap.
+  - Fluxo Platform → **Fluxo Products** (available now, Selka, real pricing Free / S$12.90 / S$39). Waitlist, 2027 roadmap, DiveCore removed.
+  - Invented testimonials → `RealWork.jsx` (5 real, anonymised builds). Insurance example dashboard → HSE/compliance.
+  - /privacy + /terms (PDPA-aligned drafts), footer links. WhatsApp +65 8214 7195 (`src/lib/contact.js`) on Contact, footer, blog CTA; telephone in JSON-LD.
+  - Floating WhatsApp button on every page (`WhatsAppFloat.jsx`, pre-typed message; Fluxo-gradient style; always visible on desktop, hides on scroll-down on phones only).
+  - OG share image `public/og-image.png`, logo `public/logo-512.png`; PSG keyword removed; `llms.txt`; IndexNow key `public/44c24ba40f8a6b64a5bdae3bb5cb984d.txt`.
+- **Local preview:** `npm run build && npx vite preview --port 4173` (preview-routes plugin mimics vercel.json).
+- **Next steps:**
+  1. Jay reviews on localhost + reads Privacy/Terms → push branch, PR (CodeRabbit).
+  2. After merge + deploy: curl live routes as GPTBot (expect full text, one <title>), check WhatsApp share preview.
+  3. Submit: IndexNow ping (api.indexnow.org, key above, host fluxo.com.sg) for Bing; Jay adds sitemap in Google Search Console (domain already has google-site-verification TXT; DNS on Vercel).
+- **Still open / needs Jay:**
+  - Founder photos DONE (25 Sep): illustrated portraits in `public/team/{jay,chris}.webp` (400px crops); originals archived in OneDrive `Desktop/Fluxo/1. Fluxo Documents/Founder Photos/`.
+  - Timeline wording site-wide = Jay's figures (25 Sep): first module ~6 weeks (42 days), full system ~14 weeks.
+  - DPAs: Vercel (Pro), Supabase, Resend DPAs are incorporated by accepting their ToS (verified 25 Sep) — privacy wording OK. Jay deletes non-converting HQ enquiries BY HAND (no purge job). Consider registering DPO on BizFile+.
+  - "24-month support minimum" on Studio confirmed by Jay (25 Sep).
+  - Google Search Console: Jay says fluxo.com.sg property + sitemap already exist → after deploy just use URL Inspection → Request indexing on the new URLs.
+  - Build log prints a harmless React warning (`offsetDistance` in ReportFlow SVG during SSR).

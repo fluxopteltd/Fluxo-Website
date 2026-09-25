@@ -15,10 +15,11 @@ function Header({ visible = true }) {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
+    { path: '/blog', label: 'Blog' },
     { path: '/contact', label: 'Contact' },
   ];
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => location.pathname === path || (path === '/blog' && location.pathname.startsWith('/blog/'));
 
   return (
     <header

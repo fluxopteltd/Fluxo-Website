@@ -1,7 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, Clock, ArrowRight, MessageCircle } from 'lucide-react';
+import { WHATSAPP_DISPLAY, WHATSAPP_E164, WHATSAPP_URL } from '@/lib/contact.js';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import ContactForm from '@/components/ContactForm.jsx';
@@ -75,6 +76,7 @@ function ContactPage() {
             '@type': 'Organization',
             name: 'Fluxo',
             email: 'business@fluxo.com.sg',
+            telephone: WHATSAPP_E164,
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Ark@KB, 68 Kaki Bukit Ave 6, #04-19',
@@ -86,6 +88,7 @@ function ContactPage() {
               '@type': 'ContactPoint',
               contactType: 'Sales',
               email: 'business@fluxo.com.sg',
+              telephone: WHATSAPP_E164,
               areaServed: 'SG',
               availableLanguage: ['English'],
             },
@@ -152,6 +155,7 @@ function ContactPage() {
                   </div>
 
                   {[
+                    { Icon: MessageCircle, label: 'WhatsApp', value: WHATSAPP_DISPLAY, href: WHATSAPP_URL, external: true },
                     { Icon: Mail, label: 'Email', value: 'business@fluxo.com.sg', href: 'mailto:business@fluxo.com.sg' },
                     { Icon: MapPin, label: 'Office', value: 'Fluxo Pte. Ltd.\nArk@KB, 68 Kaki Bukit Ave 6, #04-19\nSingapore 417896' },
                     { Icon: Clock, label: 'Response time', value: 'Within 24 hours on business days' },
@@ -170,7 +174,11 @@ function ContactPage() {
                       <div className="min-w-0">
                         <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-0.5">{item.label}</p>
                         {item.href ? (
-                          <a href={item.href} className="text-sm font-medium text-foreground hover:text-primary transition-colors break-all">
+                          <a
+                            href={item.href}
+                            {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                            className="text-sm font-medium text-foreground hover:text-primary transition-colors break-all"
+                          >
                             {item.value}
                           </a>
                         ) : (

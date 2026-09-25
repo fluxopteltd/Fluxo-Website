@@ -7,7 +7,7 @@ import {
 /**
  * WhichFit
  * Interactive 3-question decider that recommends Fluxo Studio or
- * Fluxo Platform based on the visitor's answers. Replaces a flat CTA
+ * Fluxo Products based on the visitor's answers. Replaces a flat CTA
  * button with a guided conversation.
  */
 
@@ -74,7 +74,7 @@ const RESULTS = {
     reasons: [
       'Your workflow has specifics worth fitting exactly',
       'Dedicated infrastructure + full data ownership',
-      '4–8 weeks to deploy a system designed for you',
+      'First module live in about 6 weeks, full system in about 14',
     ],
     ctaHref: '/contact?plan=studio',
     ctaLabel: 'Start your custom build',
@@ -82,18 +82,18 @@ const RESULTS = {
   platform: {
     key: 'platform',
     Icon: Layers,
-    label: 'Fluxo Platform',
-    status: 'Launching 2027',
-    statusTone: 'bg-secondary/15 text-secondary-foreground border-secondary/30',
+    label: 'Fluxo Products',
+    status: 'Available now',
+    statusTone: 'bg-primary/10 text-primary border-primary/20',
     accent: 'from-[hsl(var(--fluxo-cyan))] to-sky-400',
-    lede: 'Proven SaaS patterns, ready to deploy.',
+    lede: 'Ready-made software you can start using today, where one fits what you do.',
     reasons: [
       'Your workflow is mostly standard for your industry',
-      'Fast deployment — days not weeks',
-      'Month-to-month, predictable subscription pricing',
+      'For orders, bookings and payments, Selka is live now with a free plan',
+      'Not covered by a product yet? We will tell you honestly and suggest the next step',
     ],
-    ctaHref: '/contact?plan=platform',
-    ctaLabel: 'Join the waitlist',
+    ctaHref: '/services#platform',
+    ctaLabel: 'See our products',
   },
 };
 
@@ -176,7 +176,7 @@ export default function WhichFit() {
                 Which Fluxo option fits your operation?
               </h3>
               <p className="text-sm text-muted-foreground max-w-md mx-auto mb-6">
-                Answer 3 quick questions about how you run. We'll recommend Studio or Platform — and tell you why.
+                Answer 3 quick questions about how you run. We'll recommend Studio or Products — and tell you why.
               </p>
               <button
                 type="button"

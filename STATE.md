@@ -1,8 +1,21 @@
 # ⭐ RESUME — fluxo-website (updated 2026-09-25)
 
 - **Branch:** `feature/blog-why-fluxo` (local only, NOT pushed). main = `73ec157` (live on fluxo.com.sg). No DB/migrations.
-- **Shipped this session (local):** /blog + first article "Looking for a custom software developer in Singapore? Here is why SMEs choose Fluxo". Content in `src/content/posts.js`; `scripts/prerender-blog.js` writes static HTML for /blog routes at build time so AI crawlers (GPTBot etc.) see the full text + BlogPosting/FAQPage JSON-LD. vercel.json has explicit /blog rewrites. sitemap + `public/llms.txt` added.
-- **Local preview:** `npm run build && npx vite preview --port 4173` → http://localhost:4173/blog/custom-software-developer-singapore-why-smes-choose-fluxo
-- **Next steps:** Jay reviews copy → push branch + PR (CodeRabbit) → after merge, curl the live URL as GPTBot to confirm the prerendered HTML is served → submit sitemap in Google Search Console / Bing Webmaster (Bing feeds ChatGPT search).
-- **Site audit (25 Sep), unfixed:** 🔴 About-page founder photos 404 (hostinger CDN); "PSG grant software" in index.html keywords (not PSG-approved); "Fluxo Platform — launching 2027/waitlist" while Selka is live; SocialProof.jsx testimonials look invented; the rest of the site (/, /about, /services) is an empty JS shell to AI crawlers. 🟠 stale roadmaps (DiveCore paused), unverified "42 days" claim, Privacy/Terms links are `#`, old PNG logo in JSON-LD, no OG tags.
-- **Gotchas:** `vite preview` needs the plugin's middleware for /blog/<slug> (built in). Adding a post = new object in posts.js + sitemap entry.
+- **Shipped this session (local, commits 70ebb0f → 2a0568f):**
+  - /blog + article "Looking for a custom software developer in Singapore? Here is why SMEs choose Fluxo" (`src/content/posts.js`).
+  - **Whole site prerendered**: `npm run build` = client build → SSR build of `src/entry-server.jsx` → `scripts/prerender.mjs` writes `dist/<route>/index.html` (title/description/canonical/OG/JSON-LD + full text). `dist/_spa.html` = untouched shell for the catch-all rewrite. vercel.json has explicit per-route rewrites. New public route ⇒ add it to `routes` in entry-server.jsx AND vercel.json AND sitemap.
+  - Fluxo Platform → **Fluxo Products** (available now, Selka, real pricing Free / S$12.90 / S$39). Waitlist, 2027 roadmap, DiveCore removed.
+  - Invented testimonials → `RealWork.jsx` (5 real, anonymised builds). Insurance example dashboard → HSE/compliance.
+  - /privacy + /terms (PDPA-aligned drafts), footer links. WhatsApp +65 8214 7195 (`src/lib/contact.js`) on Contact, footer, blog CTA; telephone in JSON-LD.
+  - OG share image `public/og-image.png`, logo `public/logo-512.png`; PSG keyword removed; `llms.txt`; IndexNow key `public/44c24ba40f8a6b64a5bdae3bb5cb984d.txt`.
+- **Local preview:** `npm run build && npx vite preview --port 4173` (preview-routes plugin mimics vercel.json).
+- **Next steps:**
+  1. Jay reviews on localhost + reads Privacy/Terms → push branch, PR (CodeRabbit).
+  2. After merge + deploy: curl live routes as GPTBot (expect full text, one <title>), check WhatsApp share preview.
+  3. Submit: IndexNow ping (api.indexnow.org, key above, host fluxo.com.sg) for Bing; Jay adds sitemap in Google Search Console (domain already has google-site-verification TXT; DNS on Vercel).
+- **Still open / needs Jay:**
+  - Founder photos: hostinger CDN files are gone (404, no archive). Page shows initials. Need new headshots → put in `public/team/`.
+  - "42 days" claim on About (`AboutPage.jsx` principle 02) unverified — confirm or remove.
+  - Privacy page asserts providers are bound by contractual data protection terms (confirm Vercel/Supabase/Resend DPAs accepted) and that non-converting enquiries get deleted (HQ has no purge job yet). Consider registering DPO on BizFile+.
+  - Studio column still says "24-month support minimum" and "4–8 weeks" — confirm these match current contracts.
+  - Build log prints a harmless React warning (`offsetDistance` in ReportFlow SVG during SSR).

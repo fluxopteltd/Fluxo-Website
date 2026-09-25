@@ -18,6 +18,6 @@
   - Founder photos: hostinger CDN files are gone (404, no archive). Page shows initials. Need new headshots → put in `public/team/`.
   - Timeline wording site-wide = Jay's figures (25 Sep): first module ~6 weeks (42 days), full system ~14 weeks.
   - DPAs: Vercel (Pro), Supabase, Resend DPAs are incorporated by accepting their ToS (verified 25 Sep) — privacy wording OK. Jay deletes non-converting HQ enquiries BY HAND (no purge job). Consider registering DPO on BizFile+.
-  - Studio column still says "24-month support minimum" — confirm it matches current contracts.
+  - "24-month support minimum" on Studio confirmed by Jay (25 Sep).
   - Google Search Console: Jay says fluxo.com.sg property + sitemap already exist → after deploy just use URL Inspection → Request indexing on the new URLs.
   - Build log prints a harmless React warning (`offsetDistance` in ReportFlow SVG during SSR).

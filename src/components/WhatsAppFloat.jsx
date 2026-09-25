@@ -79,7 +79,7 @@ export default function WhatsAppFloat() {
         {/* Rotating gradient edge */}
         <span className="relative block rounded-full p-[1.5px] overflow-hidden shadow-[0_14px_40px_-10px_rgba(8,16,31,0.9)]">
           <span
-            className="wa-spin absolute left-1/2 top-1/2 w-[260%] aspect-square -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,#2A9EFF,#5358E2,#7C28D8,#5358E2,#2A9EFF)] pointer-events-none"
+            className="wa-spin absolute left-1/2 top-1/2 w-[260%] aspect-square -ml-[130%] -mt-[130%] bg-[conic-gradient(from_0deg,#2A9EFF,#5358E2,#7C28D8,#5358E2,#2A9EFF)] pointer-events-none"
             aria-hidden="true"
           />
 

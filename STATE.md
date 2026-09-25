@@ -1,6 +1,6 @@
 # ⭐ RESUME — fluxo-website (updated 2026-09-25)
 
-- **Branch:** `feature/blog-why-fluxo` (local only, NOT pushed; Jay signed off on localhost 25 Sep — awaiting his explicit go to push + PR, since a branch push triggers a Vercel preview deploy). main = `73ec157` (live on fluxo.com.sg). No DB/migrations.
+- **Branch:** `feature/blog-why-fluxo` PUSHED 25 Sep → **PR #3** (https://github.com/fluxopteltd/Fluxo-Website/pull/3), CodeRabbit reviewing. Vercel preview built + verified: all 8 routes serve prerendered HTML to GPTBot (1 title each, 17–132 kB), static files OK. NOT merged — merge = prod deploy, needs Jay. main = `73ec157` (live on fluxo.com.sg). No DB/migrations.
 - **Shipped this session (local, commits 70ebb0f → 2a0568f):**
   - /blog + article "Looking for a custom software developer in Singapore? Here is why SMEs choose Fluxo" (`src/content/posts.js`).
   - **Whole site prerendered**: `npm run build` = client build → SSR build of `src/entry-server.jsx` → `scripts/prerender.mjs` writes `dist/<route>/index.html` (title/description/canonical/OG/JSON-LD + full text). `dist/_spa.html` = untouched shell for the catch-all rewrite. vercel.json has explicit per-route rewrites. New public route ⇒ add it to `routes` in entry-server.jsx AND vercel.json AND sitemap.

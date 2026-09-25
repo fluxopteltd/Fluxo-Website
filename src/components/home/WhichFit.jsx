@@ -86,14 +86,14 @@ const RESULTS = {
     status: 'Available now',
     statusTone: 'bg-primary/10 text-primary border-primary/20',
     accent: 'from-[hsl(var(--fluxo-cyan))] to-sky-400',
-    lede: 'Ready-made software you can start using today.',
+    lede: 'Ready-made software you can start using today, where one fits what you do.',
     reasons: [
       'Your workflow is mostly standard for your industry',
-      'Live the same day, with a free plan to start',
-      'Month-to-month, predictable subscription pricing',
+      'For orders, bookings and payments, Selka is live now with a free plan',
+      'Not covered by a product yet? We will tell you honestly and suggest the next step',
     ],
-    ctaHref: 'https://selka.sg',
-    ctaLabel: 'Explore Selka',
+    ctaHref: '/services#platform',
+    ctaLabel: 'See our products',
   },
 };
 

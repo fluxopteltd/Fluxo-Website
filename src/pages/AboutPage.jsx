@@ -263,8 +263,8 @@ function AboutPage() {
               >
                 <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-3">The flywheel</p>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.15]">
-                  One custom build is a product. <br className="hidden sm:inline" />
-                  <span className="text-gradient">Three become a platform.</span>
+                  Custom builds teach us an industry. <br className="hidden sm:inline" />
+                  <span className="text-gradient">What repeats becomes a product.</span>
                 </h2>
                 <p className="text-lg text-muted-foreground mt-4">
                   Our products aren't built in a lab. They grow out of real operations — from custom Studio work with real operators, in real industries, against real constraints.

@@ -1382,7 +1382,7 @@ function HomePage() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <SectionHeader
                 headline={<>Any industry. <br /> Any <span className="text-gradient">workflow.</span></>}
-                description="Swipe through examples of the operational systems Fluxo builds — custom-built for you (Studio) or ready to use (Products). Don't see your industry? That's usually where the interesting work is."
+                description="Swipe through examples of the operational systems Fluxo builds through Studio. For orders, bookings and PayNow payments, Selka is ready to use today through Fluxo Products. Don't see your industry? That's usually where the interesting work is."
                 sectionNumber="1.0"
                 sectionName="Versatility"
                 availability="both"
@@ -1541,7 +1541,7 @@ function HomePage() {
               >
                 <p className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground mb-3">Real work</p>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.15]">
-                  Built with operators. <span className="text-gradient">Running on their operations.</span>
+                  Built with operators. <span className="text-gradient">Shaped by real operations.</span>
                 </h2>
               </motion.div>
 

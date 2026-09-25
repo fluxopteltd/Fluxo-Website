@@ -66,6 +66,8 @@ export default function WhatsAppFloat() {
       transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1], delay: visible ? 0.05 : 0 }}
       className="fixed bottom-4 right-4 sm:bottom-7 sm:right-7 z-[60]"
       style={{ pointerEvents: visible ? 'auto' : 'none' }}
+      aria-hidden={visible ? undefined : true}
+      inert={visible ? undefined : ''}
     >
       <motion.a
         href={WHATSAPP_URL}

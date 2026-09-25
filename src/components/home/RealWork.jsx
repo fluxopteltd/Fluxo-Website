@@ -102,7 +102,7 @@ export default function RealWork() {
         >
           <p className="text-sm text-foreground font-semibold mb-2">Why no client names?</p>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            These systems run our clients' live operations, so we keep them private. Ask us and we will walk you through the ones closest to your business.
+            Our client projects, live or still in testing, belong to their operations, so we keep the names private. Ask us and we will walk you through the ones closest to your business.
           </p>
         </motion.div>
       </div>

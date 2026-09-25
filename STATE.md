@@ -1,13 +1,13 @@
 # ⭐ RESUME — fluxo-website (updated 2026-09-25)
 
-- **Branch:** `feature/blog-why-fluxo` (local only, NOT pushed). main = `73ec157` (live on fluxo.com.sg). No DB/migrations.
+- **Branch:** `feature/blog-why-fluxo` (local only, NOT pushed; Jay signed off on localhost 25 Sep — awaiting his explicit go to push + PR, since a branch push triggers a Vercel preview deploy). main = `73ec157` (live on fluxo.com.sg). No DB/migrations.
 - **Shipped this session (local, commits 70ebb0f → 2a0568f):**
   - /blog + article "Looking for a custom software developer in Singapore? Here is why SMEs choose Fluxo" (`src/content/posts.js`).
   - **Whole site prerendered**: `npm run build` = client build → SSR build of `src/entry-server.jsx` → `scripts/prerender.mjs` writes `dist/<route>/index.html` (title/description/canonical/OG/JSON-LD + full text). `dist/_spa.html` = untouched shell for the catch-all rewrite. vercel.json has explicit per-route rewrites. New public route ⇒ add it to `routes` in entry-server.jsx AND vercel.json AND sitemap.
   - Fluxo Platform → **Fluxo Products** (available now, Selka, real pricing Free / S$12.90 / S$39). Waitlist, 2027 roadmap, DiveCore removed.
   - Invented testimonials → `RealWork.jsx` (5 real, anonymised builds). Insurance example dashboard → HSE/compliance.
   - /privacy + /terms (PDPA-aligned drafts), footer links. WhatsApp +65 8214 7195 (`src/lib/contact.js`) on Contact, footer, blog CTA; telephone in JSON-LD.
-  - Floating WhatsApp button on every page (`WhatsAppFloat.jsx`, pre-typed message).
+  - Floating WhatsApp button on every page (`WhatsAppFloat.jsx`, pre-typed message; Fluxo-gradient style; always visible on desktop, hides on scroll-down on phones only).
   - OG share image `public/og-image.png`, logo `public/logo-512.png`; PSG keyword removed; `llms.txt`; IndexNow key `public/44c24ba40f8a6b64a5bdae3bb5cb984d.txt`.
 - **Local preview:** `npm run build && npx vite preview --port 4173` (preview-routes plugin mimics vercel.json).
 - **Next steps:**

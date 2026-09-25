@@ -63,9 +63,9 @@ const STUDIO = {
     'Custom software, mapped to your specific workflow. Dedicated infrastructure, full data ownership, ongoing team access.',
   steps: [
     { Icon: Search, when: 'Week 1–2', title: 'Discovery', detail: 'Map workflows, scope, fix price' },
-    { Icon: Hammer, when: 'Week 3–4', title: 'Core build', detail: 'Dashboards, data, staging live' },
-    { Icon: Rocket, when: 'Week 5–6', title: 'Iterate', detail: 'Real-data trials, UX refinement' },
-    { Icon: Flag, when: 'Week 7–8+', title: 'Launch & support', detail: 'Go live, train, ongoing partnership' },
+    { Icon: Hammer, when: 'Week 3–6', title: 'First module live', detail: 'Core workflow in production' },
+    { Icon: Rocket, when: 'Week 7–12', title: 'Build out', detail: 'Remaining modules, tested by your team' },
+    { Icon: Flag, when: 'Week 13–14', title: 'Full launch & support', detail: 'Whole system live, ongoing partnership' },
   ],
   features: [
     'Custom-built for your specific operation',
@@ -77,7 +77,7 @@ const STUDIO = {
   ],
   commitment: [
     { label: 'Pricing', value: 'Setup fee + monthly subscription' },
-    { label: 'Timeline', value: '4–8 weeks to go live' },
+    { label: 'Timeline', value: 'First module ~6 wks · full system ~14 wks' },
     { label: 'Commitment', value: '24-month support minimum' },
     { label: 'Infrastructure', value: 'Dedicated per client' },
   ],

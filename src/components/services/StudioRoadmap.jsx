@@ -7,7 +7,7 @@ import {
 
 /**
  * StudioRoadmap
- * Interactive 8-week timeline showing what a Fluxo Studio engagement
+ * Interactive 14-week timeline showing what a Fluxo Studio engagement
  * looks like week-by-week. Auto-progresses through phases; user can
  * click any phase to jump.
  */
@@ -30,8 +30,8 @@ const PHASES = [
   },
   {
     key: 'core-build',
-    label: 'Core build',
-    weeks: 'Week 3–4',
+    label: 'First module live',
+    weeks: 'Week 3–6',
     Icon: Hammer,
     accent: 'from-blue-500 to-blue-600',
     dot: 'bg-blue-500',
@@ -39,20 +39,20 @@ const PHASES = [
       'Build primary dashboards and core workflows',
       'Wire up database + authentication',
       'Stand up staging environment for live preview',
-      'Weekly demo calls with feedback loop',
+      'Weekly demo calls, then the first module goes into production',
     ],
-    deliverable: 'Working system you can click through',
+    deliverable: 'First module live in about 6 weeks',
   },
   {
     key: 'iterate',
-    label: 'Iterate & refine',
-    weeks: 'Week 5–6',
+    label: 'Build out & test',
+    weeks: 'Week 7–12',
     Icon: Users,
     accent: 'from-violet-500 to-violet-600',
     dot: 'bg-violet-500',
     activities: [
-      'Your team trials on real data',
-      'Refine UX based on actual usage',
+      'Remaining modules delivered in stages',
+      'Your team tests each one on real data',
       'Add reports, exports, integrations',
       'Tune for speed, mobile, edge cases',
     ],
@@ -60,8 +60,8 @@ const PHASES = [
   },
   {
     key: 'launch',
-    label: 'Launch & train',
-    weeks: 'Week 7–8',
+    label: 'Full launch',
+    weeks: 'Week 13–14',
     Icon: Rocket,
     accent: 'from-primary to-[hsl(var(--fluxo-cyan))]',
     dot: 'bg-primary',
@@ -71,7 +71,7 @@ const PHASES = [
       'Migration from old tools / spreadsheets',
       'Go-live support + on-call cover',
     ],
-    deliverable: 'Live system, trained team, support in place',
+    deliverable: 'Full system live in about 14 weeks',
   },
   {
     key: 'ongoing',

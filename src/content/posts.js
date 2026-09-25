@@ -21,7 +21,7 @@ export const posts = [
     dek:
       'Most small businesses in Singapore run on Excel and WhatsApp, not because they want to, but because real custom software has always been priced for companies ten times their size. We started Fluxo to change that.',
     description:
-      'Fluxo is a Singapore custom software company that builds operational systems around how an SME actually works — shown as a working demo first, delivered in weeks, and paid as a monthly subscription instead of a large upfront fee.',
+      'Fluxo is a Singapore custom software company that builds operational systems around how an SME actually works — shown as a working demo first, with the first module live in about six weeks, and paid as a monthly subscription instead of a large upfront fee.',
     datePublished: '2026-09-25',
     dateModified: '2026-09-25',
     readMinutes: 9,
@@ -30,7 +30,7 @@ export const posts = [
       '**Fluxo** (Fluxo Pte. Ltd.) is a Singapore software company that builds custom operational systems for small and mid-sized businesses: job and order management, compliance records, reporting, invoicing and customer workflows.',
       'We build **around your existing workflow**, not a template you have to bend to. Your first meeting with us includes a **working demo** shaped around your business, not a slide deck.',
       'Instead of a large one-off bill, most clients pay a **predictable monthly subscription** that covers hosting, security, bug fixes and small improvements, often for less than the cost of an intern.',
-      'Systems ship in **weeks, not months**, and you pay in stages as each part is delivered and accepted.',
+      'The first module is typically **live in about 6 weeks** and the **full system in about 14 weeks**. You pay in stages as each part is delivered and accepted.',
       'We are the right fit for businesses **without their own tech team**. If you already have in-house developers, we will tell you so.',
     ],
     sections: [
@@ -87,11 +87,11 @@ export const posts = [
       },
       {
         id: 'speed',
-        toc: 'Weeks, not months',
-        heading: '4. Delivered in weeks, not months, and you pay as it lands',
+        toc: 'Six weeks to first launch',
+        heading: '4. First module live in about 6 weeks, full system in about 14, and you pay as it lands',
         blocks: [
           { p: 'Modern, AI-assisted engineering has changed what a small, senior team can deliver. Work that used to need an agency team and a year-long timeline now ships in a fraction of the time, without skipping reviews, testing or security checks.' },
-          { p: 'For typical engagements, the first usable module, often the one your front-line staff touch every day, is live within a few weeks, and the rest follows in planned stages.' },
+          { p: 'On a typical engagement, the first usable module, often the one your front-line staff touch every day, goes into production in about six weeks. The remaining modules follow over the next eight weeks or so, so the full system is usually complete in around 14 weeks. Your team is using real software from week six, not waiting for one big launch at the end.' },
           {
             ol: [
               '**Discover.** We map your workflow and pain points, and show a first demo.',
@@ -143,7 +143,7 @@ export const posts = [
                 ['Fits your workflow', 'Yes', 'Partly — you adapt to it', 'Depends on the person', 'Yes — built from your workflow'],
                 ['Upfront cost', 'High', 'Low', 'Low to medium', 'Modest set-up fee'],
                 ['Ongoing changes', 'Billed per change', 'Wait for the vendor roadmap', 'Ad hoc, if still available', 'Minor changes included'],
-                ['Time to go live', 'Months', 'Days', 'Varies', 'Weeks, in stages'],
+                ['Time to go live', 'Months', 'Days', 'Varies', 'First module ~6 weeks, full system ~14'],
                 ['How you evaluate it', 'Slides and a spec', 'Free trial', 'Portfolio', 'A working demo of your own workflow'],
                 ['Continuity', 'Strong but expensive', 'Strong', 'Key-person risk', 'Long-term subscription partnership'],
               ],
@@ -180,7 +180,7 @@ export const posts = [
       },
       {
         q: 'How long does it take to build a custom business system?',
-        a: 'With Fluxo, the first usable module is typically live within a few weeks, with further modules delivered in planned stages and tested by your own team before each sign-off.',
+        a: 'With Fluxo, the first usable module is typically live in about 6 weeks and the full system in about 14 weeks, with each module tested by your own team before sign-off.',
       },
       {
         q: 'Will I own my system, and will it carry my brand?',

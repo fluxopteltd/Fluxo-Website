@@ -253,17 +253,7 @@ function ContactPage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="max-w-5xl mx-auto mt-12 flex items-center justify-center gap-2 text-sm text-muted-foreground"
               >
-                <span>Prefer WhatsApp?</span>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-medium text-foreground hover:text-primary transition-colors mr-4"
-                >
-                  {WHATSAPP_DISPLAY}
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
-                <span>Or email</span>
+                <span>Prefer email?</span>
                 <a
                   href="mailto:business@fluxo.com.sg"
                   className="inline-flex items-center gap-1 font-medium text-foreground hover:text-primary transition-colors"

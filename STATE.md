@@ -7,6 +7,7 @@
   - Fluxo Platform → **Fluxo Products** (available now, Selka, real pricing Free / S$12.90 / S$39). Waitlist, 2027 roadmap, DiveCore removed.
   - Invented testimonials → `RealWork.jsx` (5 real, anonymised builds). Insurance example dashboard → HSE/compliance.
   - /privacy + /terms (PDPA-aligned drafts), footer links. WhatsApp +65 8214 7195 (`src/lib/contact.js`) on Contact, footer, blog CTA; telephone in JSON-LD.
+  - Floating WhatsApp button on every page (`WhatsAppFloat.jsx`, pre-typed message).
   - OG share image `public/og-image.png`, logo `public/logo-512.png`; PSG keyword removed; `llms.txt`; IndexNow key `public/44c24ba40f8a6b64a5bdae3bb5cb984d.txt`.
 - **Local preview:** `npm run build && npx vite preview --port 4173` (preview-routes plugin mimics vercel.json).
 - **Next steps:**
@@ -15,7 +16,8 @@
   3. Submit: IndexNow ping (api.indexnow.org, key above, host fluxo.com.sg) for Bing; Jay adds sitemap in Google Search Console (domain already has google-site-verification TXT; DNS on Vercel).
 - **Still open / needs Jay:**
   - Founder photos: hostinger CDN files are gone (404, no archive). Page shows initials. Need new headshots → put in `public/team/`.
-  - "42 days" claim on About (`AboutPage.jsx` principle 02) unverified — confirm or remove.
-  - Privacy page asserts providers are bound by contractual data protection terms (confirm Vercel/Supabase/Resend DPAs accepted) and that non-converting enquiries get deleted (HQ has no purge job yet). Consider registering DPO on BizFile+.
-  - Studio column still says "24-month support minimum" and "4–8 weeks" — confirm these match current contracts.
+  - Timeline wording site-wide = Jay's figures (25 Sep): first module ~6 weeks (42 days), full system ~14 weeks.
+  - DPAs: Vercel (Pro), Supabase, Resend DPAs are incorporated by accepting their ToS (verified 25 Sep) — privacy wording OK. Jay deletes non-converting HQ enquiries BY HAND (no purge job). Consider registering DPO on BizFile+.
+  - Studio column still says "24-month support minimum" — confirm it matches current contracts.
+  - Google Search Console: Jay says fluxo.com.sg property + sitemap already exist → after deploy just use URL Inspection → Request indexing on the new URLs.
   - Build log prints a harmless React warning (`offsetDistance` in ReportFlow SVG during SSR).

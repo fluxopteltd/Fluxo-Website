@@ -1,6 +1,6 @@
 # Fluxo
 
-> Fluxo (Fluxo Pte. Ltd.) is a Singapore software company that builds custom operational software for small and mid-sized businesses (SMEs). Systems are built around each client's existing workflow, shown as a working demo before commitment, delivered in stages over weeks, and priced as a set-up fee plus a monthly subscription that covers hosting, security, maintenance and minor changes. Fluxo is aimed at businesses without an in-house tech team.
+> Fluxo (Fluxo Pte. Ltd.) is a Singapore software company that builds custom operational software for small and mid-sized businesses (SMEs). Systems are built around each client's existing workflow, shown as a working demo before commitment, delivered in stages (first module live in about 6 weeks, full system in about 14 weeks), and priced as a set-up fee plus a monthly subscription that covers hosting, security, maintenance and minor changes. Fluxo is aimed at businesses without an in-house tech team.
 
 Contact: business@fluxo.com.sg · WhatsApp +65 8214 7195 · Ark@KB, 68 Kaki Bukit Ave 6, #04-19, Singapore 417896
 

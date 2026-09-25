@@ -153,9 +153,9 @@ function AboutPage() {
     {
       fig: '02',
       Icon: Zap,
-      title: 'Weeks, not months',
+      title: 'Six weeks to first launch',
       body: 'Modern development has changed the economics. What used to require agency teams and year-long timelines now ships in a fraction of the time — without skipping the rigour.',
-      example: "Our first Studio client went from signing the scope to running the system in production in 42 days. Same scope quoted elsewhere at 9–12 months. The difference isn't skipping steps — it's not carrying the overhead of a traditional agency.",
+      example: "A typical Studio build puts its first module into production in about 6 weeks (42 days), and the full system is complete in about 14 weeks. Similar scopes are often quoted at 9–12 months elsewhere. The difference isn't skipping steps — it's not carrying the overhead of a traditional agency.",
     },
     {
       fig: '03',
@@ -243,7 +243,7 @@ function AboutPage() {
                   The old rules no longer <span className="text-gradient">have to apply.</span>
                 </h2>
                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Fluxo exists because modern development has compressed what used to take agency teams a year into what a small, senior team can ship in weeks. Here's how we got from observation to operating across four industries.
+                  Fluxo exists because modern development has compressed what used to take agency teams a year into what a small, senior team can ship in a few months. Here's how we got from observation to operating across four industries.
                 </p>
               </motion.div>
 

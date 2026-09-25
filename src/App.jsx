@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes, BrowserRouter as Router, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppFloat from '@/components/WhatsAppFloat.jsx';
 import ScrollProgress from '@/components/ScrollProgress.jsx';
 import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
@@ -49,6 +50,7 @@ function App() {
       <ScrollProgress />
       <ScrollToTop />
       <AnimatedRoutes />
+      <WhatsAppFloat />
     </Router>
   );
 }

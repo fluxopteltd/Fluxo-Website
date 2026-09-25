@@ -193,7 +193,7 @@ function ServicesPage() {
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-[1.1]">
-                  Custom-built, in weeks not <span className="text-gradient">months.</span>
+                  First module in 6 weeks. <span className="text-gradient">Full system in 14.</span>
                 </h2>
                 <p className="mt-4 text-base lg:text-lg text-muted-foreground leading-relaxed">
                   How Studio engagements compare — and what week-by-week delivery actually looks like.

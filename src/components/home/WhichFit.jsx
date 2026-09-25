@@ -74,7 +74,7 @@ const RESULTS = {
     reasons: [
       'Your workflow has specifics worth fitting exactly',
       'Dedicated infrastructure + full data ownership',
-      '4–8 weeks to deploy a system designed for you',
+      'First module live in about 6 weeks, full system in about 14',
     ],
     ctaHref: '/contact?plan=studio',
     ctaLabel: 'Start your custom build',
